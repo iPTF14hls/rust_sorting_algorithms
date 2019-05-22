@@ -1,9 +1,8 @@
 pub mod ms;
 pub mod ss;
-pub mod bs;
+pub mod boso;
+pub mod buso;
 extern crate rand;
-use rand::seq::SliceRandom;
-use rand::thread_rng;
 
 #[cfg(test)]
 mod test_functions {

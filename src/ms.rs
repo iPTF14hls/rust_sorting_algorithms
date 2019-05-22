@@ -1,5 +1,4 @@
 use std::cmp::{Ord, Ordering};
-use std::thread;
 
 #[test]
 fn merge_sort_properly_sorts() {
@@ -34,13 +33,11 @@ pub fn merge_sort<T: Ord + Copy>(array: &mut [T]) {
     if len <= 1 {
         return;
     }
-
     let (lef, rig) = array.split_at_mut(len/2);
-
+    
     merge_sort(lef);
     merge_sort(rig);
     
-
     let temp = merge(lef, rig);
     
     for (i, val) in temp.into_iter().enumerate() {
