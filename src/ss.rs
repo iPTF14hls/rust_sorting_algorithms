@@ -6,7 +6,7 @@ use std::{
 #[test]
 fn selection_sort_properly_sorts() {
     use crate::test_functions::sort_properly_sorts;
-    sort_properly_sorts(&selection_sort)
+    sort_properly_sorts(&selection_sort, 10_000)
 }
 
 pub fn selection_sort<T: Ord + Copy>(array: &mut [T]) {

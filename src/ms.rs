@@ -1,9 +1,10 @@
 use std::cmp::{Ord, Ordering};
+use std::thread;
 
 #[test]
 fn merge_sort_properly_sorts() {
     use crate::test_functions::sort_properly_sorts;
-    sort_properly_sorts(&merge_sort)
+    sort_properly_sorts(&merge_sort, 100_000)
 }
 
 fn merge<T: Ord + Copy>(mut lef: &[T], mut rig: &[T]) -> Vec<T> {
@@ -38,6 +39,7 @@ pub fn merge_sort<T: Ord + Copy>(array: &mut [T]) {
 
     merge_sort(lef);
     merge_sort(rig);
+    
 
     let temp = merge(lef, rig);
     
