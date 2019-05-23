@@ -22,6 +22,6 @@ mod test_functions {
         assert!(orig
             .into_iter()
             .zip(r.iter_mut())
-            .all(|(a, b)|a==*b))
+            .all(|(a, b)|a==*b), "{:?}", r)
     }
 }

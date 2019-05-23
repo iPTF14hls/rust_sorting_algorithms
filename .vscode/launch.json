@@ -7,35 +7,17 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'merge_sort'",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=merge_sort",
-                    "--package=merge_sort"
-                ],
-                "filter": {
-                    "name": "merge_sort",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'merge_sort'",
+            "name": "Debug unit tests in library 'merge_sort'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=merge_sort",
+                    "--lib",
                     "--package=merge_sort"
                 ],
                 "filter": {
                     "name": "merge_sort",
-                    "kind": "bin"
+                    "kind": "lib"
                 }
             },
             "args": [],
