@@ -12,13 +12,10 @@ pub fn bogo_sort<T: Ord>(array: &mut [T]) {
     let mut rng = thread_rng();
 
     loop {
-
         let mut aiter1 = array.iter();
         aiter1.next();
-        if array.iter().zip(aiter1).all(|(a, b)| match b.cmp(a) {
-            Ordering::Equal | Ordering::Greater => true,
-            Ordering::Less => false,
-        }) {
+        
+        if array.iter().zip(aiter1).all(|(a, b)| a.cmp(b) == Ordering::Less) {
             break;
         }
 
