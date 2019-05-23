@@ -1,6 +1,6 @@
-use std::cmp::{Ord, Ordering};
-use rand::thread_rng;
 use rand::seq::SliceRandom;
+use rand::thread_rng;
+use std::cmp::{Ord, Ordering};
 
 #[test]
 fn bogo_sort_properly_sorts() {
@@ -14,8 +14,12 @@ pub fn bogo_sort<T: Ord>(array: &mut [T]) {
     loop {
         let mut aiter1 = array.iter();
         aiter1.next();
-        
-        if array.iter().zip(aiter1).all(|(a, b)| a.cmp(b) == Ordering::Less) {
+
+        if array
+            .iter()
+            .zip(aiter1)
+            .all(|(a, b)| a.cmp(b) == Ordering::Less)
+        {
             break;
         }
 
