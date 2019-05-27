@@ -2,10 +2,11 @@ use rand::seq::SliceRandom;
 use rand::thread_rng;
 use std::cmp::{Ord, Ordering};
 
-#[test]
-fn bogo_sort_properly_sorts() {
-    use crate::test_functions::sort_properly_sorts;
-    sort_properly_sorts(&bogo_sort, 8)
+#[bench]
+fn bogo_sort_properly_sorts(b: &mut test::Bencher) {
+    use crate::test_functions::sort_testing;
+    //Note, Array size cannot go any higher as the tests take awhile to finish.
+    sort_testing(&bogo_sort, 8, b)
 }
 
 pub fn bogo_sort<T: Ord>(array: &mut [T]) {

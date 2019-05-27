@@ -1,9 +1,9 @@
 use std::cmp::{Ord, Ordering};
 
-#[test]
-fn merge_sort_properly_sorts() {
-    use crate::test_functions::sort_properly_sorts;
-    sort_properly_sorts(&merge_sort, 100_000)
+#[bench]
+fn merge_sort_properly_sorts(b: &mut test::Bencher) {
+    use crate::test_functions::sort_testing;
+    sort_testing(&merge_sort, 10_000, b)
 }
 
 fn merge<T: Ord + Copy>(mut lef: &[T], mut rig: &[T]) -> Vec<T> {

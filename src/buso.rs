@@ -1,9 +1,9 @@
 use std::cmp::{Ord, Ordering};
 
-#[test]
-fn bubble_sort_properly_sorts() {
-    use crate::test_functions::sort_properly_sorts;
-    sort_properly_sorts(&bubble_sort, 10_000)
+#[bench]
+fn bubble_sort_properly_sorts(b: &mut test::Bencher) {
+    use crate::test_functions::sort_testing;
+    sort_testing(&bubble_sort, 10_000, b)
 }
 
 pub fn bubble_sort<T: Ord + Copy>(mut array: &mut [T]) {
