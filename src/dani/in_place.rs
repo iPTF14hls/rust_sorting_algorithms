@@ -5,7 +5,7 @@ use std::cmp::Ordering;
 
 #[bench]
 fn dani_merge_sort_in_place_properly_sorts(b: &mut test::Bencher) {
-    use crate::test_functions::sort_testing;
+    use crate::test_functions::{sort_testing, BENCH_CONSTANT};
     sort_testing(
         &|array: &mut [usize]| {
             let mut arr_vec = Vec::new();
@@ -15,7 +15,7 @@ fn dani_merge_sort_in_place_properly_sorts(b: &mut test::Bencher) {
                 *o = *e;
             });
         },
-        10_000,
+        BENCH_CONSTANT,
         b,
     )
 }

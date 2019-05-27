@@ -2,8 +2,8 @@ use std::cmp::{Ord, Ordering};
 
 #[bench]
 fn insertion_sort_properly_sorts(b: &mut test::Bencher) {
-    use crate::test_functions::sort_testing;
-    sort_testing(&insertion_sort, 10_000, b)
+    use crate::test_functions::{sort_testing, BENCH_CONSTANT};
+    sort_testing(&insertion_sort, BENCH_CONSTANT, b)
 }
 
 pub fn insertion_sort<T: Ord + Copy>(array: &mut [T]) {

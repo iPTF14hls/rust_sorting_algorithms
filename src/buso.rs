@@ -2,8 +2,8 @@ use std::cmp::{Ord, Ordering};
 
 #[bench]
 fn bubble_sort_properly_sorts(b: &mut test::Bencher) {
-    use crate::test_functions::sort_testing;
-    sort_testing(&bubble_sort, 10_000, b)
+    use crate::test_functions::{sort_testing, BENCH_CONSTANT};
+    sort_testing(&bubble_sort, BENCH_CONSTANT, b)
 }
 
 pub fn bubble_sort<T: Ord + Copy>(mut array: &mut [T]) {

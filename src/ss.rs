@@ -5,8 +5,8 @@ use std::{
 
 #[bench]
 fn selection_sort_properly_sorts(b: &mut test::Bencher) {
-    use crate::test_functions::sort_testing;
-    sort_testing(&selection_sort, 10_000, b)
+    use crate::test_functions::{sort_testing, BENCH_CONSTANT};
+    sort_testing(&selection_sort, BENCH_CONSTANT, b)
 }
 
 pub fn selection_sort<T: Ord + Copy>(array: &mut [T]) {
